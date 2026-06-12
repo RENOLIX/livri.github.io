@@ -6,6 +6,7 @@ import {
   Bike,
   Box,
   Building2,
+  CarFront,
   Check,
   ChevronRight,
   Clock3,
@@ -362,6 +363,37 @@ function AudienceSection() {
   );
 }
 
+function MotorcycleMark({ size = 34 }: { size?: number }) {
+  return <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="11" cy="34" r="7" stroke="currentColor" strokeWidth="2.6"/><circle cx="37" cy="34" r="7" stroke="currentColor" strokeWidth="2.6"/><path d="M11 34h9l5-12h8l4 12M21 34h16M25 22l-5-7h-6M31 18h7" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/></svg>;
+}
+
+function ScooterMark({ size = 42 }: { size?: number }) {
+  return <svg width={size} height={size} viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="13" cy="44" r="6" stroke="currentColor" strokeWidth="2.8"/><circle cx="43" cy="44" r="6" stroke="currentColor" strokeWidth="2.8"/><path d="M13 44h20c5 0 8-3 8-8V14M35 14h11M41 20h-7M21 40l-5-18h12" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/><path d="m29 25-6 8h6l-4 7 10-11h-6l4-4h-4Z" fill="currentColor"/></svg>;
+}
+
+function VehiclesSection() {
+  return (
+    <section className="vehicles-section" id="vehicules">
+      <div className="vehicles-inner">
+        <div className="vehicles-heading"><p className="web-eyebrow">Livrer autrement</p><h2>Chaque trajet merite<br />le bon vehicule.</h2><p>Livri accueille plusieurs mobilites pour adapter chaque mission a la distance, au volume et aux rues de la ville.</p></div>
+        <div className="scooter-showcase">
+          <span className="new-badge"><Zap size={13} fill="currentColor" /> Nouveau en Algerie</span>
+          <div className="scooter-halo halo-a" /><div className="scooter-halo halo-b" />
+          <div className="hero-scooter"><ScooterMark size={210} /></div>
+          <div className="scooter-copy"><span>Trottinette electrique</span><h3>Silencieuse. Agile.<br />Faite pour la ville.</h3><p>Une nouvelle maniere d'assurer les livraisons courtes, rapidement et avec une empreinte reduite.</p></div>
+          <div className="scooter-specs"><div><strong>0</strong><span>Emission directe</span></div><div><strong>100%</strong><span>Electrique</span></div><div><strong>Urbain</strong><span>Trajets courts</span></div></div>
+        </div>
+        <div className="vehicle-options">
+          <article><span className="vehicle-icon"><Bike size={35} strokeWidth={1.8} /></span><div><strong>Velo</strong><small>Leger et responsable</small></div><Check size={18} /></article>
+          <article><span className="vehicle-icon"><MotorcycleMark /></span><div><strong>Moto</strong><small>Rapide et polyvalente</small></div><Check size={18} /></article>
+          <article><span className="vehicle-icon"><CarFront size={35} strokeWidth={1.8} /></span><div><strong>Voiture</strong><small>Pour les grands colis</small></div><Check size={18} /></article>
+          <article className="electric-option"><span className="vehicle-icon"><ScooterMark size={36} /></span><div><strong>Trottinette</strong><small>La mobilite nouvelle</small></div><Zap size={18} fill="currentColor" /></article>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TrustSection() {
   return (
     <section className="web-section trust-section" id="entreprise">
@@ -403,5 +435,5 @@ function SiteFooter() {
 }
 
 export default function App() {
-  return <div className="website"><SiteHeader /><main><HeroSection /><div className="stats-strip"><div className="stat-card"><span className="stat-icon"><Sparkles size={20} /></span><span className="stat-copy"><strong>6 services</strong><small>Pour tous vos besoins</small></span></div><div className="stat-card"><span className="stat-icon"><WalletCards size={20} /></span><span className="stat-copy"><strong>200 DA</strong><small>Prix minimum</small></span></div><div className="stat-card"><span className="stat-icon"><Route size={20} /></span><span className="stat-copy"><strong>Temps reel</strong><small>Suivi de bout en bout</small></span></div><div className="stat-card"><span className="stat-icon"><Building2 size={20} /></span><span className="stat-copy"><strong>3 espaces</strong><small>Client, livreur, commerce</small></span></div></div><ServicesSection /><StepsSection /><AudienceSection /><TrustSection /><DownloadSection /></main><SiteFooter /></div>;
+  return <div className="website"><SiteHeader /><main><HeroSection /><div className="stats-strip"><div className="stat-card"><span className="stat-icon"><Sparkles size={20} /></span><span className="stat-copy"><strong>6 services</strong><small>Pour tous vos besoins</small></span></div><div className="stat-card"><span className="stat-icon"><WalletCards size={20} /></span><span className="stat-copy"><strong>200 DA</strong><small>Prix minimum</small></span></div><div className="stat-card"><span className="stat-icon"><Route size={20} /></span><span className="stat-copy"><strong>Temps reel</strong><small>Suivi de bout en bout</small></span></div><div className="stat-card"><span className="stat-icon"><Building2 size={20} /></span><span className="stat-copy"><strong>3 espaces</strong><small>Client, livreur, commerce</small></span></div></div><ServicesSection /><StepsSection /><AudienceSection /><VehiclesSection /><TrustSection /><DownloadSection /></main><SiteFooter /></div>;
 }
