@@ -306,7 +306,7 @@ function HeroSection() {
         </div>
       </div>
       <div className="hero-phone-wrap">
-        <div className="phone-caption"><Smartphone size={17} /><span>Essayez l'application<br /><strong>Elle est interactive</strong></span></div>
+        <div className="phone-caption"><Smartphone size={18} /><span><strong>Demo interactive</strong><small>Explorez l'application</small></span></div>
         <PhoneDemo />
       </div>
     </section>
@@ -376,10 +376,18 @@ function TrustSection() {
   );
 }
 
+function AppleStoreMark() {
+  return <svg className="official-store-logo apple-store-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.02-2.36 1.93-3.51 2.02-3.56-1.1-1.61-2.82-1.83-3.43-1.86-1.44-.15-2.84.86-3.57.86-.74 0-1.86-.84-3.07-.81-1.56.02-3.02.93-3.82 2.34-1.66 2.87-.42 7.09 1.17 9.41.8 1.14 1.72 2.41 2.92 2.36 1.18-.05 1.62-.76 3.04-.76 1.41 0 1.82.76 3.05.73 1.26-.02 2.06-1.14 2.83-2.29.92-1.31 1.29-2.61 1.31-2.68-.03-.01-2.43-.93-2.45-3.74ZM14.7 5.59c.65-.81 1.1-1.91.97-3.02-.94.04-2.12.65-2.8 1.44-.6.69-1.14 1.83-.99 2.9 1.06.08 2.15-.53 2.82-1.32Z" /></svg>;
+}
+
+function GooglePlayMark() {
+  return <svg className="official-store-logo" viewBox="0 0 28 31" aria-hidden="true"><path fill="#00d7fe" d="M1.3 1.4a2.2 2.2 0 0 0-.6 1.55v25.1c0 .6.22 1.12.58 1.52L15.35 15.5 1.3 1.4Z"/><path fill="#ffce00" d="m20.04 10.82-4.69 4.68L1.3 1.4c.28-.27.66-.43 1.1-.43.31 0 .62.09.9.25l16.74 9.6Z"/><path fill="#f63448" d="m20.05 20.17-16.8 9.62c-.67.38-1.43.28-1.96-.22l14.06-14.06 4.7 4.66Z"/><path fill="#00f076" d="m26.05 14.26-6.01-3.44-4.69 4.69 4.7 4.66 6-3.44c1.04-.6 1.04-1.87 0-2.47Z"/></svg>;
+}
+
 function DownloadSection() {
   return (
     <section className="download-section" id="telecharger">
-      <div className="download-copy"><p className="web-eyebrow">Bientot sur vos stores</p><h2>Votre prochaine livraison commence ici.</h2><p>Rejoignez les premiers utilisateurs de Livri et decouvrez une nouvelle facon de faire circuler les choses a Alger.</p><div className="store-buttons"><button><span className="store-mark">A</span><span>Telecharger sur<br /><strong>App Store</strong></span></button><button><span className="play-mark">▶</span><span>Disponible sur<br /><strong>Google Play</strong></span></button></div></div>
+      <div className="download-copy"><p className="web-eyebrow">Bientot sur vos stores</p><h2>Votre prochaine livraison commence ici.</h2><p>Rejoignez les premiers utilisateurs de Livri et decouvrez une nouvelle facon de faire circuler les choses a Alger.</p><div className="store-buttons"><button aria-label="Telecharger Livri sur l'App Store"><AppleStoreMark /><span>Telecharger sur<br /><strong>l'App Store</strong></span></button><button aria-label="Telecharger Livri sur Google Play"><GooglePlayMark /><span>Disponible sur<br /><strong>Google Play</strong></span></button></div></div>
       <div className="download-visual"><div className="floating-order"><span><PackageCheck /></span><div><small>Livraison terminee</small><strong>Merci d'avoir choisi Livri</strong></div><Check /></div><div className="download-word">livri<span>.</span></div><div className="download-route"><i /><b /><i /></div></div>
     </section>
   );
@@ -389,11 +397,11 @@ function SiteFooter() {
   return (
     <footer className="site-footer" id="contact">
       <div className="footer-main"><div className="footer-brand"><a className="site-logo" href="#accueil">livri<span>.</span></a><p>La livraison multi-services<br />pensee pour l'Algerie.</p><span className="footer-location"><MapPin size={15} /> Alger, Algerie</span></div><div className="footer-links"><div><strong>Livri</strong><a href="#services">Services</a><a href="#fonctionnement">Comment ca marche</a><a href="#entreprise">Notre entreprise</a></div><div><strong>Rejoindre</strong><a href="#partenaires">Devenir livreur</a><a href="#partenaires">Devenir commercant</a><a href="mailto:contact@livri.dz">Nous contacter</a></div><div><strong>Legal</strong><a href="#contact">Conditions d'utilisation</a><a href="#contact">Confidentialite</a><a href="#contact">Reglement interieur</a></div></div></div>
-      <div className="footer-bottom"><span>© 2026 Livri. Tous droits reserves.</span><span>Fait a Alger pour l'Algerie.</span></div>
+      <div className="footer-bottom"><span>© 2026 Livri. Tous droits reserves.</span><span className="footer-credit">Developed by <a href="https://sitemagique.com" target="_blank" rel="noreferrer">SITEMAGIQUE</a></span><span>Fait a Alger pour l'Algerie.</span></div>
     </footer>
   );
 }
 
 export default function App() {
-  return <div className="website"><SiteHeader /><main><HeroSection /><div className="stats-strip"><div><strong>6</strong><span>services essentiels</span></div><div><strong>200 DA</strong><span>prix minimum</span></div><div><strong>Temps reel</strong><span>suivi des livraisons</span></div><div><strong>3 espaces</strong><span>client, livreur, commerce</span></div></div><ServicesSection /><StepsSection /><AudienceSection /><TrustSection /><DownloadSection /></main><SiteFooter /></div>;
+  return <div className="website"><SiteHeader /><main><HeroSection /><div className="stats-strip"><div className="stat-card"><span className="stat-icon"><Sparkles size={20} /></span><span className="stat-copy"><strong>6 services</strong><small>Pour tous vos besoins</small></span></div><div className="stat-card"><span className="stat-icon"><WalletCards size={20} /></span><span className="stat-copy"><strong>200 DA</strong><small>Prix minimum</small></span></div><div className="stat-card"><span className="stat-icon"><Route size={20} /></span><span className="stat-copy"><strong>Temps reel</strong><small>Suivi de bout en bout</small></span></div><div className="stat-card"><span className="stat-icon"><Building2 size={20} /></span><span className="stat-copy"><strong>3 espaces</strong><small>Client, livreur, commerce</small></span></div></div><ServicesSection /><StepsSection /><AudienceSection /><TrustSection /><DownloadSection /></main><SiteFooter /></div>;
 }
