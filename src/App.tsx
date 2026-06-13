@@ -246,6 +246,7 @@ function PhoneDemo() {
 
   return (
     <div className="phone-frame">
+        <div className="dynamic-island" aria-hidden="true"><span className="island-camera" /><span className="island-sensor" /></div>
         {screen === "home" && <HomeScreen onOrder={openOrder} onTracking={() => setScreen("tracking")} onProfile={() => setScreen("account")} />}
         {screen === "order" && <OrderScreen initialService={selectedService} onBack={() => setScreen("home")} onConfirm={() => setScreen("tracking")} />}
         {screen === "tracking" && <TrackingScreen onBack={() => setScreen("home")} />}
