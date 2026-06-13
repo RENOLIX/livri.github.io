@@ -215,7 +215,7 @@ body { background: #f5f5f0; }
 .section-heading-web h2, .trust-intro h2, .download-copy h2 { margin: 0; font: 800 clamp(42px, 5vw, 66px)/1 "Manrope", sans-serif; letter-spacing: -3.8px; }
 .section-heading-web > p { max-width: 440px; margin: 0; color: #70736a; font-size: 15px; line-height: 1.7; }
 .web-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.services-showcase .web-services-grid { margin-top: 75px; }
+.services-showcase .web-services-grid { margin-top: 140px; }
 .web-service-card { min-height: 285px; padding: 27px; border: 1px solid #dedfd8; border-radius: 23px; background: #fff; position: relative; transition: transform .25s, box-shadow .25s, border-color .25s; }
 .web-service-card:hover { transform: translateY(-6px); border-color: #bfc1b8; box-shadow: 0 22px 45px rgba(25,28,20,.09); }
 .web-service-card.featured { background: #b4ff39; border-color: #b4ff39; }
