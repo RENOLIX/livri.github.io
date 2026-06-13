@@ -294,7 +294,6 @@ function HeroSection() {
     <section className="web-hero" id="accueil">
       <div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" />
       <div className="hero-copy">
-        <div className="hero-kicker"><span /> Disponible a Alger</div>
         <h1>Tout Alger.<br /><em>Livre simplement.</em></h1>
         <p>Repas, courses, medicaments, documents ou colis. Livri connecte chaque besoin au bon livreur, avec un prix clair et un suivi en temps reel.</p>
         <div className="hero-actions">
