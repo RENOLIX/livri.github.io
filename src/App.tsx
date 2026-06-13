@@ -318,7 +318,13 @@ function ServicesSection() {
   return (
     <section className="web-section services-showcase" id="services">
       <div className="section-heading-web">
-        <div><p className="web-eyebrow">Un seul reflexe</p><h2>Tout ce qui compte,<br />livre par Livri.</h2></div>
+        <div className="services-title-wrap">
+          <p className="web-eyebrow">Un seul reflexe</p>
+          <div className="split-title">
+            <h2>Tout ce qui compte,<br />livre par Livri.</h2>
+            <h2 className="split-title-light" aria-hidden="true">Tout ce qui compte,<br />livre par Livri.</h2>
+          </div>
+        </div>
         <p>Une seule application pour simplifier les petites urgences et les grands quotidiens des Algeriens.</p>
       </div>
       <div className="web-services-grid">

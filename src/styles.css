@@ -160,7 +160,7 @@ body { background: #f5f5f0; }
 .site-menu { display: none; border: 0; background: transparent; cursor: pointer; }
 
 .web-hero { min-height: max(860px, 100vh); padding: 130px max(28px, calc((100vw - 1180px) / 2)) 35px; position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) 440px; align-items: start; gap: clamp(55px, 8vw, 120px); background: #e9eae4; }
-.web-hero::after { content: ""; position: absolute; left: -170px; bottom: -250px; width: 430px; height: 430px; border-radius: 50%; background: #b4ff39; }
+.web-hero::after { display: none; }
 .hero-orbit { position: absolute; border: 1px solid rgba(16,17,15,.09); border-radius: 50%; pointer-events: none; }
 .orbit-one { width: 650px; height: 650px; right: -280px; top: -270px; }
 .orbit-two { width: 410px; height: 410px; right: -160px; top: -150px; }
@@ -204,7 +204,12 @@ body { background: #f5f5f0; }
 .stat-copy small { margin-top: 6px; color: #a8aaa4; font-size: 10px; line-height: 1.35; text-transform: uppercase; letter-spacing: .7px; }
 
 .web-section { max-width: 1180px; margin: 0 auto; padding: 150px 0; }
-.services-showcase { padding-top: 135px; }
+.services-showcase { padding-top: 115px; }
+.services-title-wrap { position: relative; isolation: isolate; }
+.services-title-wrap::before { content: ""; position: absolute; z-index: -1; width: 430px; height: 430px; left: calc((1180px - 100vw) / 2 - 170px); top: -200px; border-radius: 50%; background: #b4ff39; }
+.split-title { position: relative; }
+.split-title h2 { position: relative; z-index: 1; }
+.split-title-light { position: absolute !important; z-index: 2 !important; inset: 0; color: #fff; pointer-events: none; clip-path: circle(215px at calc((1180px - 100vw) / 2 + 45px) -9px); }
 .section-heading-web { display: grid; grid-template-columns: 1.3fr .7fr; align-items: end; gap: 70px; margin-bottom: 55px; }
 .web-eyebrow { margin: 0 0 13px; color: #777a71; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.4px; }
 .section-heading-web h2, .trust-intro h2, .download-copy h2 { margin: 0; font: 800 clamp(42px, 5vw, 66px)/1 "Manrope", sans-serif; letter-spacing: -3.8px; }
@@ -340,7 +345,7 @@ body { background: #f5f5f0; }
   .stats-strip .stat-card, .stats-strip .stat-card:first-child { min-height: 100px; padding: 16px; border: 1px solid #30312d; border-radius: 16px; background: #171815; display: flex; align-items: center; gap: 14px; }
   .stat-icon { flex: 0 0 30px; width: 30px; height: 30px; border-radius: 0; background: transparent; color: #fff; display: grid; place-items: center; }
   .stat-copy strong { font-size: 18px; letter-spacing: -.7px; }.stat-copy small { font-size: 9px; text-transform: none; letter-spacing: 0; }
-  .web-section { padding: 100px 0; }.services-showcase { padding-top: 100px; }.section-heading-web { grid-template-columns: 1fr; gap: 20px; }.web-services-grid, .steps-grid, .audience-grid { grid-template-columns: 1fr; }
+  .web-section { padding: 100px 0; }.services-showcase { padding-top: 100px; }.services-title-wrap::before, .split-title-light { display: none; }.section-heading-web { grid-template-columns: 1fr; gap: 20px; }.web-services-grid, .steps-grid, .audience-grid { grid-template-columns: 1fr; }
   .web-service-card { min-height: 240px; }.web-service-card h3 { margin-top: 40px; }
   .dark-section { padding: 100px 28px; }.step-card { min-height: 270px; }.step-card h3 { margin-top: 80px; }
   .price-banner { grid-template-columns: 1fr; gap: 13px; }.price-banner > svg { display: none; }
